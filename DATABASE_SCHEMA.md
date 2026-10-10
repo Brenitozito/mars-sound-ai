@@ -269,6 +269,7 @@ Consequências de produto:
 - A chave privilegiada é lida das variáveis do próprio Supabase (`SUPABASE_SECRET_KEYS`, com fallback para `SUPABASE_SERVICE_ROLE_KEY`) e nunca sai da função.
 - CORS: origens permitidas na secret `ALLOWED_ORIGINS` (lista separada por vírgula). Sem ela, apenas `http://localhost:5173`.
 - Respostas: `200 { success: true }` ou `{ error }` em pt-BR (`401`, `403`, `405`, `500`), sem detalhes internos.
+- Versão publicada: 2 (10/10/2026), idêntica ao código do repositório. Validada sem efeitos colaterais: preflight `OPTIONS` → `204` com CORS, origem fora de `ALLOWED_ORIGINS` → `403`, `GET` → `405`, sem token → `401` (gateway) e token sem usuário → `401` ("Sessão inválida").
 
 ## 10. Seed
 
@@ -282,7 +283,7 @@ Nenhum usuário, faixa ou playlist é criado. Para adicionar um gênero, mood ou
 
 ## 11. Testes e verificação
 
-- [`supabase/tests/rls_smoke_test.sql`](./supabase/tests/rls_smoke_test.sql): cria dois usuários e exercita 15 cenários (perfil, faixas, moods, playlists, RPCs, follows, plays, likes, busca, Storage e bloqueio de `anon`). Termina sempre com `raise exception`, o que desfaz tudo; o relatório aparece na mensagem de erro. Inclui os caminhos de mídia de outro usuário, plays repetidos, o follow repetido e, desde a migration 011, `get_popular_tags`/`ai_generators` (leitura por `authenticated`, escrita negada, `anon` bloqueado). Última execução completa: 65/65 verificações OK; os cenários da 011 foram validados à parte (8/8 OK, com rollback).
+- [`supabase/tests/rls_smoke_test.sql`](./supabase/tests/rls_smoke_test.sql): cria dois usuários e exercita 15 cenários (perfil, faixas, moods, playlists, RPCs, follows, plays, likes, busca, Storage e bloqueio de `anon`). Termina sempre com `raise exception`, o que desfaz tudo; o relatório aparece na mensagem de erro. Inclui os caminhos de mídia de outro usuário, plays repetidos, o follow repetido e, desde a migration 011, `get_popular_tags`/`ai_generators` (leitura por `authenticated`, escrita negada, `anon` bloqueado). Última execução completa (10/10/2026, após a migration 011): 70/70 verificações OK.
 - QA ponta a ponta (front + Supabase, dois usuários reais, chamadas REST cruzadas e exclusão de conta pela UI): RLS, Storage e `delete-account` aprovados; as falhas encontradas (faixa apontando para arquivos alheios, `play_count` inflável, notificação de follow repetida) foram corrigidas na migration 010.
 - Advisors de segurança: apenas `auth_leaked_password_protection` (proteção contra senhas vazadas desativada no Auth; ativar no painel, seção 12, item 4). Advisors de performance: apenas `unused_index` (esperado sem tráfego).
 - Tipos TypeScript: [`src/app/services/supabase/database.types.ts`](./src/app/services/supabase/database.types.ts). Os tipos `Insert`/`Update` gerados **não** refletem os privilégios por coluna: monte os payloads apenas com as colunas da seção 7.
