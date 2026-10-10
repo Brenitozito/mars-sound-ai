@@ -1,0 +1,14 @@
+---
+alwaysApply: true
+---
+# Boas Práticas Workflow (GitHub & Vercel)
+
+## GitHub
+- Commits pequenos e descritivos utilizando o padrão (`feat:`, `fix:`, `refactor:`, `chore:`). Evitar commits genéricos como "update".
+- Nunca commitar arquivos `.env` ou dados sensíveis.
+- Criar branches por funcionalidade (`feature/nome`) e abrir pull request antes de realizar o merge.
+
+## Vercel
+- Garantir que o build passe sem erros antes do push e configurar variáveis de ambiente no painel da Vercel.
+- Otimizar performance (lazy loading, imagens) e evitar requisições desnecessárias no carregamento inicial.
+- Usar *preview deployments* para testes, monitorar logs de erro e garantir SEO básico (meta tags, title).

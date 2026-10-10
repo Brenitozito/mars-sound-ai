@@ -1,0 +1,13 @@
+---
+description: Padrões de estilização e boas práticas com Tailwind CSS
+globs: "**/*.tsx, **/*.jsx, **/*.css"
+alwaysApply: false
+---
+
+# Boas Práticas Tailwind CSS
+
+- **Classes Utilitárias:** Usar classes utilitárias ao invés de CSS customizado ou inline styles.
+- **Design System & Consistência:** Priorizar consistência visual (espaçamento, cores, tipografia) usando o design system do projeto.
+- **Manutenibilidade:** Evitar classes muito longas e repetitivas (criar componentes reutilizáveis para padrões repetidos).
+- **Mobile-First:** Sempre aplicar mobile-first e usar variantes (`hover`, `focus`, `responsive`) corretamente.
+- **Interface & Acessibilidade:** Evitar overdesign (UI simples e clara) e garantir acessibilidade (contraste, focus states).

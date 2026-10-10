@@ -1,0 +1,16 @@
+---
+description: Boas práticas e padrões para desenvolvimento em React
+globs: "**/*.tsx, **/*.jsx"
+alwaysApply: false
+---
+
+# Boas Práticas React
+
+- **Componentes Funcionais:** Usar apenas componentes funcionais e hooks (nunca utilizar classes).
+- **Uso Consciente de useEffect:** Nunca usar useEffect sem necessidade ou para lógica que pode ser derivada diretamente.
+- **Gestão de Estado:** Usar useState apenas quando necessário (evitar excesso de estado) e levantar estado apenas quando necessário (state lifting controlado).
+- **Responsabilidade Única:** Componentes devem ter responsabilidade única.
+- **Evitar Props Drilling:** Evitar props drilling (usar context ou composição).
+- **Reutilização & Performance:** Criar componentes reutilizáveis sempre que possível e usar lazy loading para componentes pesados.
+- **Listas & JSX:** Sempre adicionar key única em listas e evitar lógica complexa diretamente no JSX.
+- **Estrutura de Pastas:** Padronizar estrutura de pastas (`components`, `hooks`, `services`, `utils`).

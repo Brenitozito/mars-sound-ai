@@ -1,0 +1,20 @@
+---
+description: Configurações do Vite e integração segura com Supabase
+globs: "**/*.ts, **/*.tsx, **/*.js, **/*.jsx"
+alwaysApply: false
+---
+
+# Boas Práticas Vite & Supabase
+
+## Vite
+- Manter estrutura simples e organizada.
+- Separar configurações de ambiente (`.env`) e nunca expor variáveis sensíveis no frontend.
+- Utilizar import dinâmico para otimizar bundle, manter o build leve/rápido e evitar dependências desnecessárias.
+- Usar aliases para imports (ex: `@/components`).
+
+## Supabase
+- Nunca expor `service_role` key no frontend.
+- Usar RLS (Row Level Security) sempre ativado com *policies* claras e seguras.
+- Validar dados antes de enviar para o banco e tratar erros de todas as queries.
+- Evitar lógica complexa no frontend (delegar ao backend/RPC quando necessário).
+- Estruturar tabelas com nomes claros/consistentes e usar `SELECT` específico ao invés de `SELECT *`.

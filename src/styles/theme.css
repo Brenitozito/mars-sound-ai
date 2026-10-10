@@ -1,0 +1,286 @@
+@custom-variant dark (&:is(.dark *));
+
+/* ── Primitive tokens ──────────────────────────────────── */
+:root {
+  /* Brand palette */
+  --mars-red-400: #ff4d72;
+  --mars-red-500: #ff164c;
+  --mars-red-600: #d4103e;
+  --mars-red-900: #3d0515;
+
+  /* Dark neutrals */
+  --mars-dark-950: #0b0708;
+  --mars-dark-900: #100c0d;
+  --mars-dark-800: #1a1214;
+  --mars-dark-700: #201617;
+  --mars-dark-600: #2c1e20;
+  --mars-dark-500: #30292b;
+
+  /* Text palette */
+  --mars-gray-50:  #f7f5f5;
+  --mars-gray-100: #ebe9e9;
+  --mars-gray-200: #d6d3d3;
+  --mars-gray-300: #bababa;
+  --mars-gray-400: #9e9a9a;
+  --mars-gray-500: #716e6e;
+
+  /* Warm accent */
+  --mars-warm-100: #ffe8ed;
+
+  /* ── Semantic tokens ──────────────────────────────────── */
+
+  /* Brand */
+  --color-brand:       var(--mars-red-500);
+  --color-brand-hover: var(--mars-red-400);
+  --color-brand-dark:  var(--mars-red-600);
+
+  /* Surfaces */
+  --color-bg-base:        var(--mars-dark-900);
+  --color-bg-sidebar:     var(--mars-dark-800);
+  --color-bg-card:        var(--mars-dark-700);
+  --color-bg-card-hover:  var(--mars-dark-600);
+  --color-bg-elevated:    var(--mars-dark-800);
+
+  /* Borders */
+  --color-border-subtle: var(--mars-dark-500);
+  --color-border-card:   var(--mars-dark-500);
+
+  /* Typography */
+  --color-text-primary:   var(--mars-gray-100);
+  --color-text-secondary: var(--mars-gray-300);
+  --color-text-active:    var(--mars-warm-100);
+  --color-text-muted:     var(--mars-gray-500);
+  --color-text-brand:     var(--mars-red-500);
+
+  /* Interaction */
+  --color-active-bg:   rgba(255, 22, 76, 0.12);
+  --color-hover-bg:    rgba(255, 255, 255, 0.06);
+
+  /* Player */
+  --color-player-bg:   var(--mars-dark-950);
+  --color-progress-bg: var(--mars-dark-500);
+  --color-progress-fill: var(--mars-red-500);
+
+  /* Spacing */
+  --sidebar-width: 190px;
+  --navbar-height: 64px;
+  --player-height: 72px;
+
+  /* Typography base */
+  --font-size: 16px;
+
+  /* Legacy tokens (kept for UI components) */
+  --background: var(--mars-dark-900);
+  --foreground: var(--mars-gray-100);
+  --card: var(--mars-dark-700);
+  --card-foreground: var(--mars-gray-100);
+  --popover: var(--mars-dark-800);
+  --popover-foreground: var(--mars-gray-100);
+  --primary: var(--mars-red-500);
+  --primary-foreground: #ffffff;
+  --secondary: var(--mars-dark-600);
+  --secondary-foreground: var(--mars-gray-100);
+  --muted: var(--mars-dark-600);
+  --muted-foreground: var(--mars-gray-400);
+  --accent: var(--mars-dark-600);
+  --accent-foreground: var(--mars-gray-100);
+  --destructive: var(--mars-red-500);
+  --destructive-foreground: #ffffff;
+  --border: var(--mars-dark-500);
+  --input: var(--mars-dark-600);
+  --input-background: var(--mars-dark-600);
+  --switch-background: var(--mars-dark-500);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: var(--mars-red-500);
+  --radius: 0.375rem;
+  --sidebar: var(--mars-dark-800);
+  --sidebar-foreground: var(--mars-gray-100);
+  --sidebar-primary: var(--mars-red-500);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--mars-dark-600);
+  --sidebar-accent-foreground: var(--mars-gray-100);
+  --sidebar-border: var(--mars-dark-500);
+  --sidebar-ring: var(--mars-red-500);
+
+  /* Charts */
+  --chart-1: var(--mars-red-500);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+}
+
+@theme inline {
+  --color-brand:             var(--color-brand);
+  --color-brand-hover:       var(--color-brand-hover);
+  --color-bg-base:           var(--color-bg-base);
+  --color-bg-sidebar:        var(--color-bg-sidebar);
+  --color-bg-card:           var(--color-bg-card);
+  --color-bg-card-hover:     var(--color-bg-card-hover);
+  --color-text-primary:      var(--color-text-primary);
+  --color-text-secondary:    var(--color-text-secondary);
+  --color-text-active:       var(--color-text-active);
+  --color-text-muted:        var(--color-text-muted);
+  --color-text-brand:        var(--color-text-brand);
+  --color-border-subtle:     var(--color-border-subtle);
+  --color-active-bg:         var(--color-active-bg);
+  --color-hover-bg:          var(--color-hover-bg);
+  --color-player-bg:         var(--color-player-bg);
+  --color-progress-bg:       var(--color-progress-bg);
+  --color-progress-fill:     var(--color-progress-fill);
+
+  --color-background:        var(--background);
+  --color-foreground:        var(--foreground);
+  --color-card:              var(--card);
+  --color-card-foreground:   var(--card-foreground);
+  --color-popover:           var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary:           var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary:         var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:             var(--muted);
+  --color-muted-foreground:  var(--muted-foreground);
+  --color-accent:            var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive:       var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border:            var(--border);
+  --color-input:             var(--input);
+  --color-input-background:  var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring:              var(--ring);
+  --color-chart-1:           var(--chart-1);
+  --color-chart-2:           var(--chart-2);
+  --color-chart-3:           var(--chart-3);
+  --color-chart-4:           var(--chart-4);
+  --color-chart-5:           var(--chart-5);
+  --radius-sm:               calc(var(--radius) - 4px);
+  --radius-md:               calc(var(--radius) - 2px);
+  --radius-lg:               var(--radius);
+  --radius-xl:               calc(var(--radius) + 4px);
+  --color-sidebar:           var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary:   var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent:    var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border:    var(--sidebar-border);
+  --color-sidebar-ring:      var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-color: var(--color-bg-base);
+    color: var(--color-text-primary);
+    font-family: 'Inter', sans-serif;
+  }
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  /* Hide scrollbars globally but keep functionality */
+  .scrollbar-hide {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+
+  /* Custom range slider styles */
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  input[type="range"]::-ms-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Playing bars animation */
+  @keyframes barBounce {
+    0%, 100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(0.4);
+    }
+  }
+}
